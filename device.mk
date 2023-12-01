@@ -21,7 +21,6 @@ $(call inherit-product, vendor/motorola/channel/channel-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lmodroid
-PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
     AvoidAppsInCutoutOverlay \
@@ -31,11 +30,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
-
-# Init
-PRODUCT_PACKAGES += \
-    init.channel.rc
-#    init.audio.specified_para.sh
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -60,8 +54,12 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc
+    $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
+    $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
+
+# Init
+PRODUCT_PACKAGES += \
+    init.channel.rc
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -75,6 +73,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
+# Shipping API
+PRODUCT_SHIPPING_API_LEVEL := 28
 
 # Thermal
 PRODUCT_COPY_FILES += \
