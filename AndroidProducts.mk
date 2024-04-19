@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_channel.mk
+    $(LOCAL_DIR)/lmodroid_channel.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_channel-eng \
-    lineage_channel-user \
-    lineage_channel-userdebug
+    lmodroid_channel-eng \
+    lmodroid_channel-user \
+    lmodroid_channel-userdebug

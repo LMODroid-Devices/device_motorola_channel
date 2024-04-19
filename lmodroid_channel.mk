@@ -1,6 +1,6 @@
 # Inherit some common Lineage stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/lmodroid/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Device
@@ -11,7 +11,7 @@ PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := channel
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_MODEL := moto g(7) play
-PRODUCT_NAME := lineage_channel
+PRODUCT_NAME := lmodroid_channel
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=channel \
