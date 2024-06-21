@@ -16,8 +16,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lmodroid_channel.mk
-
-COMMON_LUNCH_CHOICES := \
-    lmodroid_channel-eng \
-    lmodroid_channel-user \
-    lmodroid_channel-userdebug
